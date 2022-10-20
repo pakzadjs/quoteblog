@@ -7,10 +7,10 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 const Header = () => {
   return (
     <AppBar position="sticky">
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Toolbar>
-          <Typography component="h1" variant="h5" fontWeight="bold" flex={1}>
-            Quoteblog
+          <Typography component="h1" variant="h5" fontWeight="700" flex={1}>
+            QUOTE"BLOG
           </Typography>
           <MenuBookIcon />
         </Toolbar>
