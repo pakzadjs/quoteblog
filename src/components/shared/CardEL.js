@@ -11,6 +11,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const CardEL = ({ title, slug, coverPhoto, author }) => {
   return (
@@ -40,10 +41,21 @@ const CardEL = ({ title, slug, coverPhoto, author }) => {
         </Typography>
       </CardContent>
 
-      <Divider variant="middle" sx={{margin: '10px'}} />
+      <Divider variant="middle" sx={{ margin: "10px" }} />
 
       <CardActions>
-         <Button variant="outlined" size="small" sx={{width: '100%', borderRadius: 3}}>مطالعه مقاله</Button>
+        {/* <Link
+          to={`/blogs/${slug}`}
+          style={{ textDecoration: "none", width: "100%" }}
+        > */}
+          <Button
+            variant="outlined"
+            size="small"
+            sx={{ width: "100%", borderRadius: 3 }}
+          >
+            مطالعه مقاله
+          </Button>
+        {/* </Link> */}
       </CardActions>
     </Card>
   );
