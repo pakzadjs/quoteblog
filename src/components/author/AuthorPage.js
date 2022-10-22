@@ -4,6 +4,7 @@ import sanitizeHtml from "sanitize-html";
 
 // Component
 import CardEL from "../shared/CardEL";
+import Loader from "../shared/Loader";
 
 // GraphQL
 import { useQuery } from "@apollo/client";
@@ -19,7 +20,7 @@ const AuthorPage = () => {
     variables: { slug: slug },
   });
 
-  if (loading) return <h3>Loading ...</h3>;
+  if (loading) return <Loader />;
 
   if (errors) return <h3>Error</h3>;
 
