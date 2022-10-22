@@ -13,14 +13,16 @@ const CommentForm = ({ slug }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+  const [pressed, setPressed] = useState(false);
 
-  const [sendComment, { loading, data, errors }] = useMutation(SEND_COMMENT, {
+  const [sendComment, { loading, data }] = useMutation(SEND_COMMENT, {
     variables: { name, email, text, slug },
   });
 
   const sendHandler = () => {
     if (name && email && text) {
       sendComment();
+      setPressed(true);
     } else {
       toast.warn("لطفا تمام فیلد ها را پر کنید", {
         position: "top-center",
@@ -28,10 +30,11 @@ const CommentForm = ({ slug }) => {
     }
   };
 
-  if (data) {
+  if (data && pressed) {
     toast.success("کامنت ارسال شد و منتظر تایید می باشد", {
       position: "top-center",
     });
+    setPressed(false);
   }
 
   return (

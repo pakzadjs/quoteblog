@@ -5,6 +5,7 @@ import sanitizeHtml from "sanitize-html";
 // Components
 import Loader from "../shared/Loader";
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 // GraphQL
 import { useQuery } from "@apollo/client";
@@ -76,6 +77,9 @@ const BlogPage = () => {
         </Grid>
         <Grid item xs={12}>
           <CommentForm slug={slug} />
+        </Grid>
+        <Grid item xs={12}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>

@@ -12,7 +12,7 @@ const SEND_COMMENT = gql`
         name: $name
         email: $email
         text: $text
-        post: { connect: { Post: { slug: $slug } } }
+        post: { connect: { slug: $slug } }
       }
     ) {
       id
