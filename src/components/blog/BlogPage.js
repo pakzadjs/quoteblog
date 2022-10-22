@@ -4,6 +4,7 @@ import sanitizeHtml from "sanitize-html";
 
 // Components
 import Loader from "../shared/Loader";
+import CommentForm from "../comment/CommentForm";
 
 // GraphQL
 import { useQuery } from "@apollo/client";
@@ -72,6 +73,9 @@ const BlogPage = () => {
           <div
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.html) }}
           ></div>
+        </Grid>
+        <Grid item xs={12}>
+          <CommentForm slug={slug} />
         </Grid>
       </Grid>
     </Container>
