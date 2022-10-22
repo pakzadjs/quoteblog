@@ -28,7 +28,7 @@ const BlogPage = () => {
 
   if (errors) return <h3>Error</h3>;
 
-  const { coverPhoto, title, author, content } = data.post;
+  const { coverPhoto, title, author, content } = data?.post;
 
   return (
     <Container maxWidth="lg">
@@ -49,8 +49,8 @@ const BlogPage = () => {
         </Grid>
         <Grid item xs={12} mt={6}>
           <img
-            src={coverPhoto.url}
-            alt={data.post.slug}
+            src={coverPhoto?.url}
+            alt={data.post?.slug}
             width="100%"
             style={{ borderRadius: "15px" }}
           />
@@ -63,10 +63,10 @@ const BlogPage = () => {
 
           <Box component="div">
             <Typography component="p" variant="h5" fontWeight={700}>
-              {author.name}
+              {author?.name}
             </Typography>
             <Typography component="p" variant="p" color="text.secondary">
-              {author.field}
+              {author?.field}
             </Typography>
           </Box>
         </Grid>

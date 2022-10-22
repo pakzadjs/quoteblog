@@ -24,7 +24,6 @@ const AuthorPage = () => {
 
   if (errors) return <h3>Error</h3>;
 
-  console.log(data);
   const { avatar, name, field, posts } = data.author;
 
   return (

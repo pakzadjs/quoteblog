@@ -1,8 +1,9 @@
-import { AppBar, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
-// assets
+// MaterialUI
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { AppBar, Container, Toolbar, Typography } from "@mui/material";
 
 const Header = () => {
   return (
@@ -10,9 +11,13 @@ const Header = () => {
       <Container maxWidth="lg">
         <Toolbar>
           <Typography component="h1" variant="h5" fontWeight="700" flex={1}>
-            QUOTE"BLOG
+            <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+              QUOTE"BLOG
+            </Link>
           </Typography>
-          <MenuBookIcon />
+          <Link to="/" style={{ color: "#fff" }}>
+            <MenuBookIcon />
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
