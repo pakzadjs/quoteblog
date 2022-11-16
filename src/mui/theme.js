@@ -1,6 +1,11 @@
 import { createTheme } from "@mui/material";
+import { createMuiTheme } from "@mui/material";
 
 const theme = createTheme({
+  palette: {
+    mode: "light",
+  },
+
   typography: {
     fontFamily: `'YekanBakh', 'Arial', 'sans-serif'`,
     fontWeightLight: 300,
