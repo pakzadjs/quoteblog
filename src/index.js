@@ -5,10 +5,10 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 import App from "./App";
 
-import theme from "./mui/theme";
-import { ThemeProvider } from "@mui/material/";
+// UI
 import "./styles/index.css";
 import "./styles/fonts.css";
+import ThemeContextProvider from "./context/ThemeContextProvider";
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_GRAPHCMS_URI,
@@ -19,9 +19,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <App />
-      </ThemeProvider>
+      </ThemeContextProvider>
     </BrowserRouter>
   </ApolloProvider>
 );

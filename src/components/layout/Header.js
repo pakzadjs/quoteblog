@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
+// Context
+import { ThemeContext } from "../../context/ThemeContextProvider";
+
 // MaterialUI
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import Brightness3Icon from "@mui/icons-material/Brightness3";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import { AppBar, Container, Icon, Toolbar, Typography } from "@mui/material";
 
 const Header = () => {
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+
+  const darkModeHandler = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <AppBar position="sticky">
       <Container maxWidth="lg">
@@ -15,9 +25,9 @@ const Header = () => {
               QUOTE"BLOG
             </Link>
           </Typography>
-          <Link to="/" style={{ color: "#fff" }}>
-            <MenuBookIcon />
-          </Link>
+          <Icon sx={{ cursor: "pointer" }} onClick={darkModeHandler}>
+            {darkMode ? <LightModeIcon /> : <Brightness3Icon />}
+          </Icon>
         </Toolbar>
       </Container>
     </AppBar>
