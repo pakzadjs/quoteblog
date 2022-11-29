@@ -55,6 +55,7 @@ const CommentForm = ({ slug }) => {
       <Grid item xs={12} m={2}>
         <TextField
           label="نام کاربر"
+          dir="ltr"
           variant="outlined"
           sx={{ width: "100%" }}
           value={name}
@@ -64,6 +65,7 @@ const CommentForm = ({ slug }) => {
       <Grid item xs={12} m={2}>
         <TextField
           label="ایمیل"
+          dir="ltr"
           variant="outlined"
           sx={{ width: "100%" }}
           value={email}
@@ -73,6 +75,7 @@ const CommentForm = ({ slug }) => {
       <Grid item xs={12} m={2}>
         <TextField
           label="متن کامنت"
+          dir="ltr"
           variant="outlined"
           sx={{ width: "100%" }}
           value={text}
